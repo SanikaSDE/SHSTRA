@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Typography, Link, styled, Divider } from '@mui/material';
+import { Box, Grid, Typography, Link, styled, Divider, Container } from '@mui/material';
 import { footerData } from '../../Utils/StaticData';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -8,13 +8,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const textStyles = {
   body1: {
-    fontSize: '1.5rem',
+    fontSize: '15px',
     lineHeight: 1.6,
     mb: 2
   },
   h6: {
     fontWeight: 'bold',
-    fontSize: '1.5rem',
+    fontSize: '15px',
     mb: 2
   },
   body2: {
@@ -36,22 +36,21 @@ const flexStyles = {
 const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#3c472c',
   color: '#fff',
-  padding: theme.spacing(6, 4),
+  padding: theme.spacing(4, 2),
   margin: '0 auto',
-  width: '100%'
 }));
 
 const Logo = styled('img')({
-  height: '4.5rem',
+  height: '40px',
   width: 'auto',
-  marginBottom: '1.5rem',
+  marginBottom: '20px',
   filter: 'brightness(0) invert(1)'
 });
 
 const FooterLink = styled(Link)(({ theme }) => ({
   color: '#fff',
   display: 'block',
-  fontSize: '1.5rem',
+  fontSize: '15px',
   marginBottom: theme.spacing(1),
   textDecoration: 'none',
   transition: 'all 0.3s ease',
@@ -66,10 +65,10 @@ const SocialIcon = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   backgroundColor: 'rgba(255, 255, 255, 0.1)',
   borderRadius: '50%',
-  height: '3.5rem',
+  height: '20px',
   marginRight: theme.spacing(1.5),
   transition: 'all 0.3s ease',
-  width: '3.5rem',
+  width: '20px',
   '&:hover': {
     backgroundColor: '#C5E8D1',
     color: '#3c472c',
@@ -80,7 +79,8 @@ const SocialIcon = styled(Box)(({ theme }) => ({
 const ContactItem = styled(Typography)({
   ...flexStyles.center,
   ...textStyles.body1,
-  mb: 1.5
+  mb: 1.5,
+  fontSize: '15px', 
 });
 
 const Footer = () => {
@@ -96,11 +96,12 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <Grid container spacing={6} margin="0 auto">
+    <Container>
+      <Grid container spacing={6} justifyContent="space-between">
         {/* Company Info */}
-        <Grid item xs={12} md={4} maxWidth={'30rem'}>
+        <Grid item xs={12} md={4}>
           <Logo src={footerData.companyInfo.logo} alt="Company Logo" />
-          <Typography variant="body1" sx={textStyles.body1}>
+          <Typography variant="body1" sx={{ fontSize: "16px" }}>
             {footerData.companyInfo.description}
           </Typography>
           <Box sx={flexStyles.socialContainer}>
@@ -138,24 +139,24 @@ const Footer = () => {
         <Grid item xs={12}>
           <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.2)', my: 2 }} />
         </Grid>
-
-        {/* Copyright */}
-        <Grid item xs={12}>
-          <Typography variant="body2" align="center" sx={textStyles.body2}>
-            {footerData.copyright}
-          </Typography>
-          <Typography variant="body2" align="center" sx={{ ...textStyles.body2, mt: 1 }}>
-            {footerData.legalLinks.map((link, index) => (
-              <React.Fragment key={index}>
-                <FooterLink href={link.url} sx={{ display: 'inline', mx: 1 }}>
-                  {link.title}
-                </FooterLink>
-                {index < footerData.legalLinks.length - 1 && ' | '}
-              </React.Fragment>
-            ))}
-          </Typography>
-        </Grid>
       </Grid>
+
+      <Box sx={{ mt: 4, textAlign: 'center' }}>
+        <Typography variant="body2" sx={textStyles.body2}>
+          {footerData.copyright}
+        </Typography>
+        <Typography variant="body2" sx={{ ...textStyles.body2, mt: 1 }}>
+          {footerData.legalLinks.map((link, index) => (
+            <React.Fragment key={index}>
+              <FooterLink href={link.url} sx={{ display: 'inline', mx: 1 }}>
+                {link.title}
+              </FooterLink>
+              {index < footerData.legalLinks.length - 1 && ' | '}
+            </React.Fragment>
+          ))}
+        </Typography>
+      </Box>
+    </Container>
     </FooterContainer>
   );
 };

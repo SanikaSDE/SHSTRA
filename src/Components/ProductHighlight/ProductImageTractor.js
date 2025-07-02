@@ -15,8 +15,8 @@ const ProductImageTractor = () => {
       <Box
         sx={{
           position: 'relative',
-          width: { xs: '30%', sm: '40%', md: '38.5625rem' },
-          height: { xs: '30%', sm: '40%', md: '31.1875rem' },
+          width: { xs: '30%', sm: '40%', md: '400px' },
+          height: { xs: '30%', sm: '40%', md: '350px' },
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -27,12 +27,12 @@ const ProductImageTractor = () => {
         <Box
           sx={{
             position: 'absolute',
-            top: { xs: '15%', md: '5rem' },
-            left: { xs: '10%', md: '5rem' },
+            top: { xs: '15%', md: '50px' },
+            left: { xs: '10%', md: '50px' },
             width: '100%',
             height: '100%',
             backgroundColor: '#C5E8D1',
-            borderRadius: { xs: '2.5rem', md: '4.8125rem' },
+            borderRadius: { xs: '30px', md: '70px' },
             zIndex: 0,
             transform: 'rotate(3deg)',
             boxShadow: '15px 15px 30px rgba(0,0,0,0.1)',
@@ -45,7 +45,7 @@ const ProductImageTractor = () => {
             height: '100%',
             backgroundColor: '#fff',
             border: '2px solid rgba(123, 3, 35, 0.1)',
-            borderRadius: { xs: '2.5rem', md: '4.8125rem' },
+            borderRadius: { xs: '30px', md: '80px' },
             zIndex: 1,
             display: 'flex',
             alignItems: 'center',

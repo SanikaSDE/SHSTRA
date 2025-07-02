@@ -10,11 +10,13 @@ import {
   useTheme
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import { colors, typography, buttonStyles } from '../../Utils/stylingComponents';
 import { homeData } from '../../Utils/StaticData';
 
 const ProductContent = styled(Box)(({ theme }) => ({
   flex: 1,
-  padding: theme.spacing(4),
+  paddingTop: theme.spacing(4),
+  paddingBottom: theme.spacing(0),
   width: '100%',
   position: 'relative',
   zIndex: 1,
@@ -38,8 +40,6 @@ const FeatureList = styled(List)(({ theme }) => ({
   }
 }));
 
-
-
 const FeatureItem = styled(ListItem)(({ theme }) => ({
   paddingLeft: 0,
   marginBottom: theme.spacing(1),
@@ -47,14 +47,13 @@ const FeatureItem = styled(ListItem)(({ theme }) => ({
   '& .MuiListItemText-root': {
     margin: 0,
   },
-  // Default "✓" icon for desktop and tablet
   '&::before': {
     content: '"✓"',
     marginRight: theme.spacing(2),
-    fontSize: '1.5rem',
-    color: '#17A24A',
+    fontSize: '15px',
+    color: colors.primary,
     fontWeight: 'bold',
-    display: 'inline-block', // show by default
+    display: 'inline-block', 
   },
   [theme.breakpoints.down('md')]: {
     alignItems: 'center',
@@ -62,45 +61,27 @@ const FeatureItem = styled(ListItem)(({ theme }) => ({
     width: '100%',
     textAlign: 'center',
     '&::before': {
-      display: 'none', // hide "✓" icon for mobile
+      display: 'none', 
     },
   }
 }));
 
-
-
 const FeatureText = styled(Typography)(({ theme }) => ({
-  fontSize: '1.75rem',
-  color: '#2F3132',
-  fontWeight: 400,
-  lineHeight: 1.5,
+  fontSize: typography.featureText.fontSize,
+  color: colors.textDark,
+  fontWeight: typography.featureText.fontWeight,
+  lineHeight: typography.featureText.lineHeight,
 }));
 
 const LearnMoreButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(4),
-  padding: theme.spacing(2, 4),
-  color: '#fff',
-  backgroundColor: '#17A24A',
-  borderRadius: '3rem',
-  minWidth: '20rem',
-  height: '5rem',
-  fontSize: '1.75rem',
-  fontWeight: 600,
-  textTransform: 'none',
-  boxShadow: '0 4px 20px rgba(23, 162, 74, 0.3)',
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    backgroundColor: '#128a3d',
-    transform: 'translateY(-3px)',
-    boxShadow: '0 6px 25px rgba(23, 162, 74, 0.4)',
-  },
+  ...buttonStyles.learnMore
 }));
 
 const ProductTractorContent = () => {
   const { productHighlight } = homeData;
   const theme = useTheme();
   
- return (
+  return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -111,10 +92,8 @@ const ProductTractorContent = () => {
         <Typography
           variant="h2"
           sx={{
-            fontSize: '4.5rem',
-            color: '#17A24A',
-            fontWeight: 800,
-            lineHeight: 1.2,
+            ...typography.h2,
+            color: colors.primary,
             mb: 2,
             textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
           }}
@@ -125,11 +104,9 @@ const ProductTractorContent = () => {
         <Typography
           variant="h3"
           sx={{
-            fontSize: '3.5rem',
-            color: '#2F3132',
-            fontWeight: 600,
+            ...typography.h3,
+            color: colors.textDark,
             mb: 3,
-            lineHeight: 1.3,
           }}
         >
           {productHighlight.title}
@@ -138,12 +115,10 @@ const ProductTractorContent = () => {
         <Typography
           variant="body1"
           sx={{
-            fontSize: '1.75rem',
-            color: '#686F75',
-            fontWeight: 400,
-            lineHeight: 1.6,
+            ...typography.body1,
+            color: colors.textGray,
             mb: 4,
-             [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('md')]: {
               alignItems: 'center',
               textAlign: 'center',
               paddingLeft: theme.spacing(55),
@@ -162,7 +137,9 @@ const ProductTractorContent = () => {
           ))}
         </FeatureList>
 
-        <LearnMoreButton variant="contained">{productHighlight.buttonText}</LearnMoreButton>
+        <LearnMoreButton variant="contained">
+          {productHighlight.buttonText}
+        </LearnMoreButton>
       </ProductContent>
     </motion.div>
   );

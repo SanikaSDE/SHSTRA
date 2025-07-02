@@ -59,12 +59,13 @@ export const featuresData = {
     }
   ],
   containerStyles: {
-    topHeight: '33.75rem',
-    bottomHeight: '33.75rem',
+    topHeight: '300px',
+    bottomHeight: '300px',
     borderRadius: '4.8125rem'
   },
   cardStyles: {
-    width: '15rem',
+    width: '40px',
+    height: '40px',
     borderRadius: '4.813rem',
     boxShadow: '0 4px 8px #17A24940'
   },
@@ -73,7 +74,7 @@ export const featuresData = {
     height: '8rem'
   },
   textStyles: {
-    fontSize: '1.5rem',
+    fontSize: '18px',
     color: '#2F3132',
     fontWeight: 400,
     lineHeight: 1.5

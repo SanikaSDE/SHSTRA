@@ -7,13 +7,13 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { contactData } from '../../Utils/StaticData';
 import pngwingright from '../../Assets/pngwingright.png'
 import pngwingleft from '../../Assets/pngwingleft.png'
+import { colors, typography, buttonStyles } from '../../Utils/stylingComponents';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   width: '100%',
-  maxWidth: '100%',
   margin: '0 auto',
-  backgroundColor: '#fff',
-  padding: theme.spacing(10),
+  backgroundColor: colors.white,
+  padding: theme.spacing(6, 0),
   position: 'relative',
   overflow: 'hidden',
   '&::before': {
@@ -33,8 +33,8 @@ const SectionContainer = styled(Box)(({ theme }) => ({
 }));
 
 const ContentContainer = styled(Box)(({ theme }) => ({
-  width: '42.188rem',
-  height: '47.25rem',
+  width: '500px',
+  height: '400px',
   position: 'relative',
   zIndex: 1,
   [theme.breakpoints.down('sm')]: {
@@ -57,8 +57,8 @@ const ContactFormBox = styled(Box)(({ theme }) => ({
   backgroundColor: '#C5E8D1',
   borderRadius: '16px',
   padding: theme.spacing(4),
-  width: '42.188rem',
-  height: '47.25rem',
+  width: '350px',
+  height: '400px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -86,9 +86,10 @@ const ContactFormBox = styled(Box)(({ theme }) => ({
 }));
 
 const TitleText = styled(Typography)(({ theme }) => ({
-  fontWeight: 700,
-  color: '#17A24A',
-  fontSize: '4rem',
+  fontWeight: typography.h2.fontWeight,
+  color: colors.primary,
+  fontSize: typography.h2.fontSize,
+  lineHeight: typography.h2.lineHeight,
   textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
   gutterBottom: true,
   [theme.breakpoints.down('sm')]: {
@@ -98,9 +99,10 @@ const TitleText = styled(Typography)(({ theme }) => ({
 }));
 
 const CompanyText = styled(Typography)(({ theme }) => ({
-  color: 'text.secondary',
-  fontSize: '3rem',
-  fontWeight: 500,
+  color: colors.textDark,
+  fontSize: typography.h3.fontSize,
+  fontWeight: typography.h3.fontWeight,
+  lineHeight: typography.h3.lineHeight,
   gutterBottom: true,
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.8rem',
@@ -109,9 +111,10 @@ const CompanyText = styled(Typography)(({ theme }) => ({
 }));
 
 const DescriptionText = styled(Typography)(({ theme }) => ({
-  color: 'text.secondary',
-  fontSize: '1.5rem',
-  fontWeight: 300,
+  color: colors.textGray,
+  fontSize: typography.body1.fontSize,
+  fontWeight: typography.body1.fontWeight,
+  lineHeight: typography.body1.lineHeight,
   paragraph: true,
   lineHeight: 1.7,
   [theme.breakpoints.down('sm')]: {
@@ -124,12 +127,13 @@ const ContactText = styled(Typography)(({ theme }) => ({
   margin: theme.spacing(1, 0),
   display: 'flex',
   alignItems: 'center',
-  fontSize: '2.25rem',
-  fontWeight: 300,
-  color: '#333',
+  fontSize: typography.featureText.fontSize,
+  fontWeight: typography.featureText.fontWeight,
+  lineHeight: typography.featureText.lineHeight,
+  color: colors.black,
   transition: 'all 0.3s ease',
   '&:hover': {
-    color: '#17A24A',
+    color: colors.primary,
     transform: 'translateX(5px)',
   },
   [theme.breakpoints.down('sm')]: {
@@ -143,8 +147,9 @@ const ContactText = styled(Typography)(({ theme }) => ({
 
 const IconWrapper = styled(Box)(({ theme }) => ({
   marginRight: theme.spacing(2),
-  color: '#17A24A',
-  fontSize: '3rem',
+  color: colors.primary,
+  fontSize: typography.featureText.fontSize,
+  lineHeight: typography.featureText.lineHeight,
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('sm')]: {
     fontSize: '2rem',
@@ -154,29 +159,29 @@ const IconWrapper = styled(Box)(({ theme }) => ({
 const RoundedTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: '1.563rem',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
     '& fieldset': {
-      borderColor: 'white',
+      borderColor: colors.white,
     },
     '&:hover fieldset': {
-      borderColor: '#17A24A',
+      borderColor: colors.primary,
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#17A24A',
+      borderColor: colors.primary,
       boxShadow: '0 0 0 2px rgba(23, 162, 74, 0.2)',
     },
   },
   '& .MuiInputLabel-root': {
-    color: 'black',
-    fontSize: '1.5rem',
+    color: colors.black,
+    fontSize: typography.lableText.fontSize,
   },
   '& .MuiInputBase-input': {
-    color: 'black',
-    fontSize: '1.5rem',
+    color: colors.black,
+    fontSize: typography.lableText.fontSize,
   },
   '& .MuiInputBase-inputMultiline': {
-    fontSize: '1.5rem',
+    fontSize: typography.lableText.fontSize,
   },
   [theme.breakpoints.down('sm')]: {
     '& .MuiInputLabel-root': {
@@ -192,13 +197,14 @@ const RoundedTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const SubmitButton = styled(Button)(({ theme }) => ({
-  width: '18.813rem',
-  height: '4.375rem',
-  backgroundColor: '#17A24A',
+  width: buttonStyles.button.minWidth,
+  height: buttonStyles.button.height,
+  backgroundColor: colors.primary,
   borderRadius: '2rem',
-  color: '#fff',
-  fontSize: '1.5rem',
-  fontWeight: 600,
+  color: colors.white,
+  fontSize: buttonStyles.button.fontSize,
+  fontWeight: buttonStyles.button.fontWeight,
+  lineHeight: typography.featureText.lineHeight,
   padding: '12px 40px',
   boxShadow: '0 4px 6px rgba(23, 162, 74, 0.3)',
   transition: 'all 0.3s ease',
@@ -221,8 +227,8 @@ const BambooDecorationRight = styled('img')(({ theme }) => ({
   position: 'absolute',
   bottom: 0,
   right: 0,
-  width: '20rem',
-  height: '30rem',
+  width: '150px',
+  height: '250px',
   opacity: 0.9,
   zIndex: 0,
   [theme.breakpoints.down('sm')]: {
@@ -234,8 +240,8 @@ const BambooDecorationLeft = styled('img')(({ theme }) => ({
   position: 'absolute',
   bottom: 0,
   left: 0,
-  width: '20rem',
-  height: '30rem',
+  width: '150px',
+  height: '250px',
   opacity: 0.9,
   zIndex: 0,
   [theme.breakpoints.down('sm')]: {
@@ -292,18 +298,30 @@ const ContactSection = () => {
           >
             <ContentContainer>
               <InfoBox>
-                <TitleText variant="h4">
+                <TitleText variant="h2" sx={{
+                            ...typography.h2,
+                            color: colors.primary,
+                            mb: 2,
+                            textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
+                          }}>
                   {contactData.title}
                 </TitleText>
-                <CompanyText variant="h5">
+                <CompanyText variant="h3" sx={{
+                            ...typography.h3,
+                            color: colors.textDark,
+                            mb: 3,
+                          }}>
                   {contactData.companyName}
                 </CompanyText>
-                <DescriptionText variant="body1">
+                <DescriptionText variant="body1" sx={{
+                            ...typography.body1,
+                            color: colors.textGray,
+                            mb: 4,}}>
                   {contactData.description}
                 </DescriptionText>
 
                 {contactData.contactInfo.map((info, index) => (
-                  <ContactText key={index}>
+                  <ContactText key={index} sx={{mb:3}}>
                     <IconWrapper>{renderIcon(info.icon)}</IconWrapper>
                     {info.text}
                   </ContactText>
@@ -330,9 +348,9 @@ const ContactSection = () => {
                       label={contactData.formFields.name.label}
                       variant="outlined"
                       sx={{
-                        width: contactData.formFields.name.width,
+                        width: "150px",
                         '& .MuiOutlinedInput-root': {
-                          height: contactData.formFields.name.height,
+                          height: "50px",
                         },
                         [theme.breakpoints.down('sm')]: {
                           width: '100%',
@@ -346,9 +364,9 @@ const ContactSection = () => {
                       label={contactData.formFields.email.label}
                       variant="outlined"
                       sx={{
-                        width: contactData.formFields.email.width,
+                        width: "150px",
                         '& .MuiOutlinedInput-root': {
-                          height: contactData.formFields.email.height,
+                          height: "50px",
                         },
                         [theme.breakpoints.down('sm')]: {
                           width: '100%',
@@ -367,9 +385,9 @@ const ContactSection = () => {
                       multiline
                       rows={contactData.formFields.message.rows}
                       sx={{
-                        width: contactData.formFields.message.width,
+                        width: "310px",
                         '& .MuiOutlinedInput-root': {
-                          height: contactData.formFields.message.height,
+                          height: "100px",
                         },
                         [theme.breakpoints.down('sm')]: {
                           width: '100%',
@@ -378,15 +396,14 @@ const ContactSection = () => {
                     />
                   </Grid>
                 </MessageContainer>
-
-                <Grid item xs={12}>
-                  <Box display="flex" justifyContent="center" mt={4}>
+              </Grid>
+              <Grid item xs={12}>
+                  <Box display="flex" justifyContent="center" alignItems={'center'} mt={4}>
                     <SubmitButton variant="contained">
                       {contactData.formFields.button.text}
                     </SubmitButton>
                   </Box>
                 </Grid>
-              </Grid>
             </ContactFormBox>
           </motion.div>
         </Grid>

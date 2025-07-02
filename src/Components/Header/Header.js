@@ -15,15 +15,22 @@ const HEADER_BG_COLOR = '#FFFFFF';
 const SECONDARY_COLOR = '#17A24A';
 const TEXT_COLOR = '#333';
 
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: HEADER_BG_COLOR,
+  // boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+}));
+
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  width: '100%',
+  maxWidth: '1200px',
+  margin: '0 auto',
   display: 'flex',
   justifyContent: 'space-between',
-  backgroundColor: HEADER_BG_COLOR,
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  padding: theme.spacing(0, 2),
 }));
 
 const Logo = styled('img')(() => ({
-  height: '3.875rem',
+  height: '40px',
   width: 'auto',
 }));
 
@@ -36,10 +43,9 @@ const NavList = styled(List)(() => ({
 const NavLink = styled(Button)(({ theme }) => ({
   color: TEXT_COLOR,
   fontWeight: 400,
-  fontSize: '1.25rem',
+  fontSize: '15px',
   textTransform: 'none',
   minWidth: 'auto',
-  padding: theme.spacing(0.5, 1),
   '&:hover': {
     color: SECONDARY_COLOR,
     backgroundColor: 'transparent',
@@ -51,9 +57,8 @@ const ExploreButton = styled(Button)(({ theme }) => ({
   backgroundColor: SECONDARY_COLOR,
   color: 'white',
   borderRadius: '4px',
-  fontSize: '1rem',
+  fontSize: '15px',
   fontWeight: 500,
-  marginRight: '10%',
   '&:hover': {
     backgroundColor: '#128a3d',
   },
@@ -61,8 +66,8 @@ const ExploreButton = styled(Button)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
-      <Container maxWidth="xl">
+    <StyledAppBar position="static" elevation={0}>
+      <Container maxWidth={false} disableGutters>
         <StyledToolbar>
           <Logo src={headerData.logo} alt="Company Logo" />
 
@@ -79,7 +84,7 @@ const Header = () => {
           <ExploreButton variant="contained">Explore More</ExploreButton>
         </StyledToolbar>
       </Container>
-    </AppBar>
+    </StyledAppBar>
   );
 };
 

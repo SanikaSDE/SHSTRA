@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Typography, styled, Grid } from '@mui/material';
 import { featuresData } from '../../Utils/StaticData';
 import { motion } from 'framer-motion';
+import { colors, typography } from '../../Utils/stylingComponents';
+
 const {
   title,
   features,
@@ -13,15 +15,15 @@ const {
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
+  height: '100%',
   position: 'relative',
-  height: `${parseInt(containerStyles.topHeight) + parseInt(containerStyles.bottomHeight)}rem`,
   margin: '0',
   padding: '0',
 }));
 
 const TopContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#C5E8D1',
-  height: containerStyles.topHeight,
+  height: '300px',
   borderTopLeftRadius: containerStyles.borderRadius,
   borderTopRightRadius: containerStyles.borderRadius,
   margin: '0',
@@ -30,7 +32,7 @@ const TopContainer = styled(Box)(({ theme }) => ({
 
 const BottomContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#fff',
-  height: containerStyles.bottomHeight,
+  height: '300px',
   borderBottomLeftRadius: containerStyles.borderRadius,
   borderBottomRightRadius: containerStyles.borderRadius,
   border: '1px solid #C5E8D1',
@@ -86,16 +88,16 @@ const FeatureImage = styled(Box)(({ theme }) => ({
 }));
 
 const FeatureText = styled(Typography)(({ theme }) => ({
-  fontSize: textStyles.fontSize,
-  color: textStyles.color,
-  fontWeight: textStyles.fontWeight,
-  lineHeight: textStyles.lineHeight,
+  fontSize: typography.featureText.fontSize,
+  color: colors.black,
+  fontWeight: typography.featureText.fontWeight,
+  lineHeight: typography.featureText.lineHeight,
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
-  fontSize: '4rem',
-  color: '#337D51',
-  fontWeight: 700,
+  fontSize: typography.h2.fontSize,
+  color: colors.primaryDark,
+  fontWeight: typography.h2.fontWeight,
   textAlign: 'center',
   padding: theme.spacing(4),
   textShadow: '1px 1px 3px rgba(0,0,0,0.1)',

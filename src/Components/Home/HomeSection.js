@@ -20,7 +20,8 @@ const BackgroundImage = styled(Box)(({ theme }) => ({
   top: 0,
   left: 0,
   right: 0,
-  height: '100vh',
+  bottom: 0,
+  height: '100%',
   width: '100%',
   backgroundImage: `url(${homeData.backgroundImage})`,
   backgroundSize: 'cover',
@@ -40,7 +41,7 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   color: PRIMARY_COLOR,
-  padding: theme.spacing(0, 2),
+  // padding: theme.spacing(0, 2),
 }));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
@@ -75,10 +76,10 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
 const ExploreButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(4),
   padding: theme.spacing(1.5, 3),
-  fontSize: '1.25rem',
+  fontSize: '15px',
   borderRadius: '2.75rem',
-  width: '100%',
-  height: '4rem',
+  width: '25%',
+  height: '50%',
   backgroundColor: SECONDARY_COLOR,
   color: PRIMARY_COLOR,
   '&:hover': {

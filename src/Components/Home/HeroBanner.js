@@ -4,10 +4,10 @@ import bgImage from '../../Assets/Home_background2.png';
 import { heroBannerData } from '../../Utils/StaticData'; 
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {colors, typography, buttonStyles} from '../../Utils/stylingComponents'
 
 const BannerContainer = styled(Box)(({ theme }) => ({
-  width: '100%',
-  height: '751px',
+  height: 'auto',
   backgroundImage: `url(${bgImage})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -19,6 +19,7 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   color: '#fff',
   zIndex: 1,
   overflow: 'hidden',
+  padding: theme.spacing(4, 0),
 
   '&::before': {
     content: '""',
@@ -35,23 +36,24 @@ const BannerContainer = styled(Box)(({ theme }) => ({
 const InnerContainer = styled(Box)(({ theme }) => ({
   backgroundColor: 'rgba(0, 0, 0, 0.3)',
   borderRadius: '291px',
-  height: '582px',
-  width: '1419px',
+  height: '50%',
+  width: '60%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: theme.spacing(4),
+  padding: theme.spacing(4, 2),
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({
-  fontSize: '2.25rem',
+  fontSize: typography.body1.fontSize,
+  fontWeight: typography.body1.fontWeight,
   marginBottom: theme.spacing(1),
 }));
 
 const MainTitle = styled(Typography)(({ theme }) => ({
-  fontSize: '6rem',
-  fontWeight: 'bold',
+  fontSize: typography.h2.fontSize,
+  fontWeight: typography.h2.fontWeight,
   padding: theme.spacing(0, 20),
   marginBottom: theme.spacing(3),
   '& span': {
@@ -63,12 +65,12 @@ const MainTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const DiscoverButton = styled(Button)(({ theme }) => ({
-  fontSize: '2.5rem',
-  width: '32.938rem',
-  height: '5.125rem',
-  fontWeight: 700,
+  fontSize: buttonStyles.button.fontSize,
+  width: buttonStyles.button.minWidth,
+  height: buttonStyles.button.height,
+  fontWeight: buttonStyles.button.fontWeight,
   borderRadius: '4.813rem',
-  backgroundColor: '#17A24A',
+  backgroundColor: colors.primary,
   color: '#fff',
   '&:hover': {
     backgroundColor: '#128a3d',
