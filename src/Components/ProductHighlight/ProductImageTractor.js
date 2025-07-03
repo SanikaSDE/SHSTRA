@@ -16,8 +16,8 @@ const ProductImageTractor = () => {
         <Box
           sx={{
             position: 'relative',
-            width: { xs: '30%', sm: '40%', md: '400px' },
-            height: { xs: '30%', sm: '40%', md: '350px' },
+            width: { xs: '50%', sm: '60%', md: '400px' },
+            height: { xs: '50%', sm: '60%', md: '350px' },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -65,7 +65,7 @@ const ProductImageTractor = () => {
               src={productHighlight.Tractor}
               alt="Tractor"
               sx={{
-                width: { xs: '70%', sm: '60%', md: '90%' },
+                width: { xs: '90%', sm: '80%', md: '90%' },
                 height: 'auto',
                 objectFit: 'contain',
                 transition: 'transform 0.5s ease',

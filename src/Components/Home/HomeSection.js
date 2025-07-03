@@ -11,10 +11,7 @@ import {
 import { homeData } from '../../Utils/StaticData';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { colors, typography, buttonStyles} from '../../Utils/stylingComponents'
-
-const PRIMARY_COLOR = '#FFFFFF';
-const SECONDARY_COLOR = '#17A24A';
+import { colors, typography, buttonStyles } from '../../Utils/stylingComponents';
 
 const BackgroundImage = styled(Box)(({ theme }) => ({
   position: 'absolute',
@@ -28,8 +25,12 @@ const BackgroundImage = styled(Box)(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  borderBottomLeftRadius: theme.breakpoints.down('sm') ? '4rem' : '10.0625rem',
-  borderBottomRightRadius: theme.breakpoints.down('sm') ? '4rem' : '8.3125rem',
+  borderBottomLeftRadius: '10rem',
+  borderBottomRightRadius: '8rem',
+  [theme.breakpoints.down('sm')]: {
+    borderBottomLeftRadius: '4rem',
+    borderBottomRightRadius: '4rem',
+  },
   opacity: 1,
   zIndex: -1,
 }));
@@ -42,7 +43,6 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   color: colors.white,
-  // padding: theme.spacing(0, 2),
 }));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
@@ -52,15 +52,14 @@ const ContentContainer = styled(Container)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center'
-  // maxWidth: '1200px !important',
+  alignItems: 'center',
+  padding: theme.spacing(0, 2),
 }));
 
 const SectionsContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: 0,
-  // alignItems: 'flex-start',
   marginBottom: theme.spacing(4),
   width: '100%',
 }));
@@ -73,11 +72,14 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   fontWeight: typography.h1.fontWeight,
   textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)',
   fontSize: typography.h1.fontSize,
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+  },
 }));
 
 const ExploreButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(4),
-  padding: theme.spacing(1.5, 3),
+  padding: theme.spacing(1.2, 2),
   fontSize: buttonStyles.button.fontSize,
   borderRadius: buttonStyles.button.borderRadius,
   width: buttonStyles.button.minWidth,
@@ -86,6 +88,11 @@ const ExploreButton = styled(Button)(({ theme }) => ({
   color: colors.white,
   '&:hover': {
     backgroundColor: colors.primaryDark,
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: 'auto',
+    fontSize: '0.95rem',
+    padding: theme.spacing(1, 2),
   },
 }));
 
@@ -98,7 +105,7 @@ const HomeSection = () => {
     <HeroContainer>
       <BackgroundImage />
 
-      <ContentContainer maxWidth={false} ref={ref}>
+      <ContentContainer maxWidth="xl" ref={ref}>
         <SectionsContainer>
           {homeData.sections.map((section, index) => (
             <motion.div

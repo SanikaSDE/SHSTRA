@@ -2,7 +2,9 @@ import React from 'react';
 import { 
   Box,
   styled,
-  Container
+  Container,
+  useTheme,
+  useMediaQuery
 } from '@mui/material';
 import Header from '../../Components/Header/Header';
 import HomeSection from '../../Components/Home/HomeSection';
@@ -16,29 +18,40 @@ import Footer from '../../Components/Footer/Footer';
 const ProductSection = styled(Box)(({ theme }) => ({
   width: '100%',
   padding: theme.spacing(8, 0),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(4, 2),
+  },
 }));
 
 const Home = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
-    <Container maxHeight="100vh" maxWidth="100%" disableGutters>
-      <Container>
-        <Header />
-      </Container>
-      <HomeSection />
+    <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+      <Header />
 
-      <ProductSection>
-          <ProductHighlight />
-      </ProductSection>
+      <Box component="main">
+        <Container maxWidth="xl" sx={{ px: isMobile ? 2 : 4 }}>
+          <HomeSection />
+        </Container>
 
-        <Feature />
+        <ProductSection>
+          <Container maxWidth="xl" sx={{ px: isMobile ? 2 : 4 }}>
+            <ProductHighlight />
+          </Container>
+        </ProductSection>
 
-        <HeroBanner />
+        <Container maxWidth="xl" sx={{ px: isMobile ? 2 : 4 }}>
+          <Feature />
+          <HeroBanner />
+          <ContactSection />
+          <LatestVideos />
+        </Container>
+      </Box>
 
-        <ContactSection/>
-
-        <LatestVideos/>
-         <Footer />
-    </Container>
+      <Footer />
+    </Box>
   );
 };
 

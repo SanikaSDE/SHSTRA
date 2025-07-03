@@ -27,9 +27,6 @@ const SectionContainer = styled(Box)(({ theme }) => ({
     zIndex: 0,
     opacity: 0.5,
   },
-  [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(4),
-  }
 }));
 
 const ContentContainer = styled(Box)(({ theme }) => ({
@@ -37,17 +34,18 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   height: '400px',
   position: 'relative',
   zIndex: 1,
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    height: 'auto',
-    paddingBottom: theme.spacing(4),
-  }
+  [theme.breakpoints.down('md')]: {
+  width: '100%',
+  height: 'auto',
+  paddingBottom: theme.spacing(4),
+}
+
 }));
 
 const InfoBox = styled(Box)(({ theme }) => ({
   paddingRight: theme.spacing(8),
   flex: 1,
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     paddingRight: 0,
     textAlign: 'center',
   }
@@ -64,6 +62,7 @@ const ContactFormBox = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
   position: 'relative',
+  margin: '0 auto',
   zIndex: 1,
   '&::after': {
     content: '""',
@@ -78,11 +77,11 @@ const ContactFormBox = styled(Box)(({ theme }) => ({
     opacity: 0.3,
     pointerEvents: 'none',
   },
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    height: 'auto',
-    padding: theme.spacing(3),
-  }
+  [theme.breakpoints.down('md')]: {
+  width: '70%',
+  height: 'auto',
+  padding: theme.spacing(3),
+}
 }));
 
 const TitleText = styled(Typography)(({ theme }) => ({
@@ -92,8 +91,8 @@ const TitleText = styled(Typography)(({ theme }) => ({
   lineHeight: typography.h2.lineHeight,
   textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
   gutterBottom: true,
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '2.5rem',
+  [theme.breakpoints.down('md')]: {
+    // fontSize: '2.5rem',
     textAlign: 'center'
   }
 }));
@@ -104,8 +103,8 @@ const CompanyText = styled(Typography)(({ theme }) => ({
   fontWeight: typography.h3.fontWeight,
   lineHeight: typography.h3.lineHeight,
   gutterBottom: true,
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1.8rem',
+  [theme.breakpoints.down('md')]: {
+    // fontSize: '1.8rem',
     textAlign: 'center'
   }
 }));
@@ -117,8 +116,8 @@ const DescriptionText = styled(Typography)(({ theme }) => ({
   lineHeight: typography.body1.lineHeight,
   paragraph: true,
   lineHeight: 1.7,
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1rem',
+  [theme.breakpoints.down('md')]: {
+    // fontSize: '1rem',
     textAlign: 'center'
   }
 }));
@@ -136,7 +135,7 @@ const ContactText = styled(Typography)(({ theme }) => ({
     color: colors.primary,
     transform: 'translateX(5px)',
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     fontSize: '1.5rem',
     justifyContent: 'center',
     '&:hover': {
@@ -151,7 +150,7 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   fontSize: typography.featureText.fontSize,
   lineHeight: typography.featureText.lineHeight,
   transition: 'all 0.3s ease',
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     fontSize: '2rem',
   }
 }));
@@ -183,7 +182,7 @@ const RoundedTextField = styled(TextField)(({ theme }) => ({
   '& .MuiInputBase-inputMultiline': {
     fontSize: typography.lableText.fontSize,
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     '& .MuiInputLabel-root': {
       fontSize: '1rem',
     },
@@ -216,7 +215,7 @@ const SubmitButton = styled(Button)(({ theme }) => ({
   '&:active': {
     transform: 'translateY(0)',
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     width: '100%',
     height: '3.5rem',
     fontSize: '1.2rem',
@@ -231,7 +230,7 @@ const BambooDecorationRight = styled('img')(({ theme }) => ({
   height: '250px',
   opacity: 0.9,
   zIndex: 0,
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     display: 'none',
   }
 }));
@@ -244,7 +243,7 @@ const BambooDecorationLeft = styled('img')(({ theme }) => ({
   height: '250px',
   opacity: 0.9,
   zIndex: 0,
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     display: 'none',
   }
 }));
@@ -254,7 +253,7 @@ const FormContainer = styled(Container)(({ theme }) => ({
   flexDirection: 'row',
   gap: theme.spacing(2),
   marginBottom: theme.spacing(3),
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     gap: theme.spacing(2),
     padding: 0
@@ -263,7 +262,7 @@ const FormContainer = styled(Container)(({ theme }) => ({
 
 const MessageContainer = styled(Container)(({ theme }) => ({
   marginBottom: theme.spacing(3),
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     padding: 0
   }
 }));
@@ -287,7 +286,14 @@ const ContactSection = () => {
   return (
     <SectionContainer>
       <BambooDecorationLeft src={pngwingleft} alt="bamboo decoration" />
-      <Grid container spacing={4} alignItems="center" justifyContent="center" direction={{ xs: 'column', md: 'row' }}>
+      <Grid
+          container
+          spacing={4}
+          alignItems="center"
+          justifyContent="center"
+          direction={{ xs: 'column', md: 'row' }}
+          sx={{ minHeight: '100vh', textAlign: { xs: 'center', md: 'left' } }}
+        >
         {/* Left Info Section */}
         <Grid item xs={12} md={6}>
           <motion.div
@@ -316,7 +322,13 @@ const ContactSection = () => {
                 <DescriptionText variant="body1" sx={{
                             ...typography.body1,
                             color: colors.textGray,
-                            mb: 4,}}>
+                            mb: 4,
+                             [theme.breakpoints.down('md')]: {
+                              alignItems: 'center',
+                              textAlign: 'center',
+                              paddingLeft: theme.spacing(10),
+                              paddingRight: theme.spacing(10),
+                  }}}>
                   {contactData.description}
                 </DescriptionText>
 
@@ -352,7 +364,7 @@ const ContactSection = () => {
                         '& .MuiOutlinedInput-root': {
                           height: "50px",
                         },
-                        [theme.breakpoints.down('sm')]: {
+                        [theme.breakpoints.down('md')]: {
                           width: '100%',
                         }
                       }}
@@ -368,7 +380,7 @@ const ContactSection = () => {
                         '& .MuiOutlinedInput-root': {
                           height: "50px",
                         },
-                        [theme.breakpoints.down('sm')]: {
+                        [theme.breakpoints.down('md')]: {
                           width: '100%',
                         }
                       }}
@@ -389,7 +401,7 @@ const ContactSection = () => {
                         '& .MuiOutlinedInput-root': {
                           height: "100px",
                         },
-                        [theme.breakpoints.down('sm')]: {
+                        [theme.breakpoints.down('md')]: {
                           width: '100%',
                         }
                       }}

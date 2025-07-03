@@ -49,6 +49,9 @@ const SubTitle = styled(Typography)(({ theme }) => ({
   fontSize: typography.body1.fontSize,
   fontWeight: typography.body1.fontWeight,
   marginBottom: theme.spacing(1),
+  [theme.breakpoints.down('md')]:{
+    fontSize: typography.featureText.fontSize
+  }
 }));
 
 const MainTitle = styled(Typography)(({ theme }) => ({
@@ -59,9 +62,9 @@ const MainTitle = styled(Typography)(({ theme }) => ({
   '& span': {
     color: '#17A24A',
   },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '2.5rem',
-  },
+  [theme.breakpoints.down('md')]:{
+    fontSize: typography.h3.fontSize
+  }
 }));
 
 const DiscoverButton = styled(Button)(({ theme }) => ({
@@ -77,6 +80,9 @@ const DiscoverButton = styled(Button)(({ theme }) => ({
     transform: 'translateY(-3px)',
   },
   transition: 'all 0.3s ease',
+  [theme.breakpoints.down('md')]:{
+    fontSize: buttonStyles.button.fontSize
+  }
 }));
 
 const HeroBanner = () => {

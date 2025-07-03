@@ -121,8 +121,8 @@ const ProductTractorContent = () => {
             [theme.breakpoints.down('md')]: {
               alignItems: 'center',
               textAlign: 'center',
-              paddingLeft: theme.spacing(55),
-              paddingRight: theme.spacing(55),
+              paddingLeft: theme.spacing(0),
+              paddingRight: theme.spacing(0),
             }
           }}
         >
