@@ -216,9 +216,11 @@ const SubmitButton = styled(Button)(({ theme }) => ({
     transform: 'translateY(0)',
   },
   [theme.breakpoints.down('md')]: {
-    width: '100%',
-    height: '3.5rem',
-    fontSize: '1.2rem',
+    fontSize: buttonStyles.mobileviewButton.fontSize,
+    fontWeight: buttonStyles.mobileviewButton.fontWeight,
+    width: '130px',
+    padding: '2px',
+    height: buttonStyles.mobileviewButton.height,
   }
 }));
 

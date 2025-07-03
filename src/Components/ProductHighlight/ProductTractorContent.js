@@ -23,6 +23,7 @@ const ProductContent = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     width: '100%',
     textAlign: 'center',
+    paddingLeft: 0
   }
 }));
 
@@ -72,7 +73,14 @@ const FeatureText = styled(Typography)(({ theme }) => ({
 }));
 
 const LearnMoreButton = styled(Button)(({ theme }) => ({
-  ...buttonStyles.learnMore
+  ...buttonStyles.learnMore,
+  [theme.breakpoints.down('md')]:{
+    fontSize: buttonStyles.mobileviewButton.fontSize,
+    fontWeight: buttonStyles.mobileviewButton.fontWeight,
+    width: buttonStyles.mobileviewButton.width,
+    height: buttonStyles.mobileviewButton.height,
+    padding: 0
+  }
 }));
 
 const ProductTractorContent = () => {

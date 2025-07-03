@@ -90,8 +90,10 @@ const ExploreButton = styled(Button)(({ theme }) => ({
     backgroundColor: colors.primaryDark,
   },
   [theme.breakpoints.down('sm')]: {
-    width: 'auto',
-    fontSize: '0.95rem',
+    fontSize: buttonStyles.mobileviewButton.fontSize,
+    fontWeight: buttonStyles.mobileviewButton.fontWeight,
+    width: '180px',
+    height: buttonStyles.mobileviewButton.height,
     padding: theme.spacing(1, 2),
   },
 }));

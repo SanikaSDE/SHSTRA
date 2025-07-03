@@ -50,7 +50,8 @@ const SubTitle = styled(Typography)(({ theme }) => ({
   fontWeight: typography.body1.fontWeight,
   marginBottom: theme.spacing(1),
   [theme.breakpoints.down('md')]:{
-    fontSize: typography.featureText.fontSize
+    fontSize: '12px',
+    marginBottom: 0
   }
 }));
 
@@ -63,7 +64,7 @@ const MainTitle = styled(Typography)(({ theme }) => ({
     color: '#17A24A',
   },
   [theme.breakpoints.down('md')]:{
-    fontSize: typography.h3.fontSize
+    fontSize: typography.body1.fontSize
   }
 }));
 
@@ -81,7 +82,10 @@ const DiscoverButton = styled(Button)(({ theme }) => ({
   },
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('md')]:{
-    fontSize: buttonStyles.button.fontSize
+    fontSize: buttonStyles.mobileviewButton.fontSize,
+    fontWeight: buttonStyles.mobileviewButton.fontWeight,
+    width: buttonStyles.mobileviewButton.width,
+    height: buttonStyles.mobileviewButton.height,
   }
 }));
 

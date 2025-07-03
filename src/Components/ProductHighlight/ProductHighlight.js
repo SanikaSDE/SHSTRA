@@ -5,11 +5,13 @@ import ProductTractorContent from './ProductTractorContent';
 import pngwingleft from '../../Assets/pngwingleft.png';
 import pngwingright from '../../Assets/pngwingright.png';
 
-const ProductWrapper = styled(Box)({
+const ProductWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
   minHeight: '500px', 
-});
+  [theme.breakpoints.down('md')]:{
+    padding:0,}
+}));
 
 const ProductContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -17,12 +19,14 @@ const ProductContainer = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
   zIndex: 1,
   position: 'relative', 
+  padding: 0,
   margin: theme.spacing(0,10),
-  paddingBottom: theme.spacing(0),
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     flexWrap: 'wrap',
     margin: 0,
+    padding: 0,
+    alignItems: 'center'
   },
 }));
 

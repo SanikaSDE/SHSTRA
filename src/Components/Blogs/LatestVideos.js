@@ -45,7 +45,7 @@ const Title = styled(Typography)(({ theme }) => ({
   padding: theme.spacing(4),
   textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
   [theme.breakpoints.down('md')]: {
-    fontSize: '2.5rem',
+    fontSize: typography.h3.fontSize
   },
 }));
 
