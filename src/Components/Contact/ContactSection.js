@@ -200,7 +200,7 @@ const SubmitButton = styled(Button)(({ theme }) => ({
   width: buttonStyles.button.minWidth,
   height: buttonStyles.button.height,
   backgroundColor: colors.primary,
-  borderRadius: '2rem',
+  borderRadius: buttonStyles.button.borderRadius,
   color: colors.white,
   fontSize: buttonStyles.button.fontSize,
   fontWeight: buttonStyles.button.fontWeight,

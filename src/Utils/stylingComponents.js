@@ -8,6 +8,11 @@ export const colors = {
 };
 
 export const typography = {
+  h1: {
+    fontSize: '60px',
+    fontWeight: 600,
+    lineHeight: 0.7
+  },
   h2: {
     fontSize: '45px',
     fontWeight: 700,
@@ -56,6 +61,7 @@ export const buttonStyles = {
     minWidth: '250px',
     height: '50px',
     fontSize: '15px',
-    fontWeight: 600
+    fontWeight: 600,
+    borderRadius: '3rem'
   }
 };

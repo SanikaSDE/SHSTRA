@@ -10,19 +10,15 @@ import {
   Container
 } from '@mui/material';
 import { headerData } from '../../Utils/StaticData';
-
-const HEADER_BG_COLOR = '#FFFFFF';
-const SECONDARY_COLOR = '#17A24A';
-const TEXT_COLOR = '#333';
+import { colors, typography, buttonStyles} from '../../Utils/stylingComponents'
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: HEADER_BG_COLOR,
+  backgroundColor: colors.white,
   // boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
 }));
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   width: '100%',
-  maxWidth: '1200px',
   margin: '0 auto',
   display: 'flex',
   justifyContent: 'space-between',
@@ -41,26 +37,26 @@ const NavList = styled(List)(() => ({
 }));
 
 const NavLink = styled(Button)(({ theme }) => ({
-  color: TEXT_COLOR,
-  fontWeight: 400,
-  fontSize: '15px',
+  color: colors.black,
+  fontWeight: typography.featureText.fontWeight,
+  fontSize: typography.featureText.fontSize,
   textTransform: 'none',
   minWidth: 'auto',
   '&:hover': {
-    color: SECONDARY_COLOR,
+    color: colors.primary,
     backgroundColor: 'transparent',
   },
 }));
 
 const ExploreButton = styled(Button)(({ theme }) => ({
   padding: theme.spacing(0.5, 1.5),
-  backgroundColor: SECONDARY_COLOR,
-  color: 'white',
-  borderRadius: '4px',
-  fontSize: '15px',
-  fontWeight: 500,
+  backgroundColor: colors.primary,
+  color: colors.white,
+  borderRadius: buttonStyles.button.borderRadius,
+  fontSize: buttonStyles.button.fontSize,
+  fontWeight: buttonStyles.button.fontWeight,
   '&:hover': {
-    backgroundColor: '#128a3d',
+    backgroundColor: colors.primaryDark,
   },
 }));
 
