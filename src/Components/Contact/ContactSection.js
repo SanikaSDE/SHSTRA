@@ -326,8 +326,8 @@ const ContactSection = () => {
                              [theme.breakpoints.down('md')]: {
                               alignItems: 'center',
                               textAlign: 'center',
-                              paddingLeft: theme.spacing(10),
-                              paddingRight: theme.spacing(10),
+                              paddingLeft: theme.spacing(5),
+                              paddingRight: theme.spacing(5),
                   }}}>
                   {contactData.description}
                 </DescriptionText>

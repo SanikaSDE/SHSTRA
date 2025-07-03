@@ -35,8 +35,6 @@ const FeatureList = styled(List)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     alignItems: 'center',
     textAlign: 'center',
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
   }
 }));
 
@@ -121,8 +119,6 @@ const ProductTractorContent = () => {
             [theme.breakpoints.down('md')]: {
               alignItems: 'center',
               textAlign: 'center',
-              paddingLeft: theme.spacing(0),
-              paddingRight: theme.spacing(0),
             }
           }}
         >

@@ -22,6 +22,7 @@ const ProductContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     flexWrap: 'wrap',
+    margin: 0,
   },
 }));
 
