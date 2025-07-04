@@ -1,5 +1,6 @@
 import shstralogo from "../Assets/SHSTRAlogo.png";
 import backgroundImage from "../Assets/Home_background.png";
+import backgroundImage2 from "../Assets/Home_background3.png"
 import Tractor from "../Assets/Tractor.png"; 
 import Card1 from "../Assets/card1.png";
 import Card2 from "../Assets/card2_1.png";
@@ -23,6 +24,7 @@ export const homeData = {
     { title: "Our way", content: "" },
   ],
   backgroundImage: backgroundImage,
+  backgroundImage2: backgroundImage2,
   productHighlight: {
     tag: "SHSTRA",
     title: "Sugarcane Harvester",

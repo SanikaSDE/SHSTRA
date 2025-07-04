@@ -43,6 +43,10 @@ const InnerContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: theme.spacing(4, 2),
+  [theme.breakpoints.down('md')]:{
+    borderRadius: '40px',
+    padding: theme.spacing(4,2)
+  }
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({

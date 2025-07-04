@@ -68,7 +68,7 @@ export const buttonStyles = {
   mobileviewButton:{
     fontSize: '12px',
     width: '130px',
-    height: '25px',
+    height: '30px',
     fontWeight: 'none'
   }
 };

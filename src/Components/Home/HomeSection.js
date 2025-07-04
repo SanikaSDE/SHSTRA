@@ -33,6 +33,12 @@ const BackgroundImage = styled(Box)(({ theme }) => ({
   },
   opacity: 1,
   zIndex: -1,
+  [theme.breakpoints.down('sm')]:{
+    backgroundImage: `url(${homeData.backgroundImage2})`,
+    borderBottomLeftRadius: '6rem',
+    borderBottomRightRadius: '6rem',
+    marginTop: 0
+  }
 }));
 
 const HeroContainer = styled(Box)(({ theme }) => ({
