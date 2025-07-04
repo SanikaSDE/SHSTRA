@@ -61,6 +61,7 @@ const NavLink = styled(Button)(({ theme }) => ({
 
 const ExploreButton = styled(Button)(({ theme }) => ({
   padding: theme.spacing(0.5, 1.5),
+  marginRight: '50px',
   backgroundColor: colors.primary,
   color: colors.white,
   borderRadius: buttonStyles.button.borderRadius,
@@ -144,9 +145,9 @@ const Header = () => {
               <IconButton 
                 edge="end" 
                 onClick={toggleDrawer(true)}
-                sx={{ color: colors.black }}
+                sx={{ color: colors.black, fontSize: '2rem', paddingRight: '40px' }}
               >
-                <MenuIcon />
+                <MenuIcon sx={{ fontSize: '2rem' }}/>
               </IconButton>
               <Drawer
                 anchor="right"
