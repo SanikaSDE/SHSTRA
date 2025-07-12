@@ -12,12 +12,12 @@ const ProductImageTractor = () => {
       transition={{ duration: 0.8, delay: 0.3 }}
       viewport={{ once: true }}
     >
-      <Container>
+      <Container disableGutters maxWidth="false">
         <Box
           sx={{
             position: 'relative',
-            width: { xs: '50%', sm: '60%', md: '400px', xl: '700px' },
-            height: { xs: '50%', sm: '60%', md: '350px', xl: '100%' },
+            width: { xs: '70%', sm: '50%', md: '400px', xl: '700px' },
+            height: { xs: '60%', sm: '60%', md: '350px', xl: '100%' },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

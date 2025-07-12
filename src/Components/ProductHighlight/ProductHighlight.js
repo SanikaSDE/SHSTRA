@@ -10,8 +10,15 @@ const ProductWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
   minHeight: '500px', 
   alignItems: 'center',
+  [theme.breakpoints.down('sm')]:{
+    padding:0,
+    paddingBottom: '30px'
+  },
   [theme.breakpoints.down('md')]:{
-    padding:0,}
+    padding:0,
+    paddingBottom: '20px'
+  }
+
 }));
 
 const ProductContainer = styled(Box)(({ theme }) => ({
@@ -21,9 +28,13 @@ const ProductContainer = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
   zIndex: 1,
   position: 'relative',
-  maxWidth: '1200px',
-  margin: '0 auto',   
+  maxWidth: '1200px', 
+  margin: '0 auto',  
   width: '100%',
+  [theme.breakpoints.down('xs')]:{
+    paddingLeft: 5,
+    paddingRight: 5
+  },
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     flexWrap: 'wrap',

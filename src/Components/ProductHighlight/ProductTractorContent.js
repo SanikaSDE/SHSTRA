@@ -17,18 +17,24 @@ const ProductContent = styled(Box)(({ theme }) => ({
   flex: 1,
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(0),
-  width: 'auto',
+  width: '100%',
+  maxWidth: '600px',
   position: 'relative',
   zIndex: 1,
-  [theme.breakpoints.down('md')]: {
-    width: '500px',
-    textAlign: 'center',
-    paddingLeft: 0
+  [theme.breakpoints.down('sm')]:{
+    padding: 0
   },
-  [theme.breakpoints.up('xl')]:{
-    width: '800px'
-  }
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    paddingLeft: theme.spacing(0),
+    paddingRight: theme.spacing(0),
+    textAlign: 'center',
+  },
+  [theme.breakpoints.up('xl')]: {
+    width: '800px',
+  },
 }));
+
 
 const FeatureList = styled(List)(({ theme }) => ({
   margin: theme.spacing(4, 0),
