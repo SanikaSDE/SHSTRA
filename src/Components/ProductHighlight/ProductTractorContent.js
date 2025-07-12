@@ -22,13 +22,17 @@ const ProductContent = styled(Box)(({ theme }) => ({
   position: 'relative',
   zIndex: 1,
   [theme.breakpoints.down('sm')]:{
-    padding: 0
+    minWidth: '320px',
+    maxWidth: '350px',
   },
   [theme.breakpoints.down('md')]: {
     width: '100%',
     paddingLeft: theme.spacing(0),
     paddingRight: theme.spacing(0),
     textAlign: 'center',
+  },
+  [theme.breakpoints.down('lg')]: {
+    width: '500px',
   },
   [theme.breakpoints.up('xl')]: {
     width: '800px',

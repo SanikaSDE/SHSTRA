@@ -96,16 +96,28 @@ const FeatureCard = styled(Box)(({ theme }) => ({
   boxShadow: cardStyles.boxShadow,
   border: '1px solid rgba(224, 224, 224, 0.5)',
   flexShrink: 0,
-  [theme.breakpoints.only('md')]:{
-    width: '160px',
-    height: '270px',
+  [theme.breakpoints.up('lg')]:{
+    width: '200px',
+    height: '300px',
     borderRadius: '80px',
+    '& img': {
+    width: '100px',
+    height: '100px',
+    objectFit: 'contain',
+    marginBottom: theme.spacing(2),
+  },
   },
   [theme.breakpoints.up('xl')]:{
-    width: '500px',
-    height: '700px',
-    borderRadius: '150px',
-  }
+    width: '280px',
+    height: '400px',
+    borderRadius: '120px',
+    '& img': {
+    width: '140px',
+    height: '140px',
+    objectFit: 'contain',
+    marginBottom: theme.spacing(2),
+  },
+  },
 }));
 
 const FeatureText = styled(Typography)(({ theme }) => ({

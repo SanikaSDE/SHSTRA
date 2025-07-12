@@ -10,15 +10,8 @@ const ProductWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
   minHeight: '500px', 
   alignItems: 'center',
-  [theme.breakpoints.down('sm')]:{
-    padding:0,
-    paddingBottom: '30px'
-  },
   [theme.breakpoints.down('md')]:{
-    padding:0,
-    paddingBottom: '20px'
-  }
-
+    padding:0,},
 }));
 
 const ProductContainer = styled(Box)(({ theme }) => ({
@@ -27,22 +20,21 @@ const ProductContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   gap: theme.spacing(4),
   zIndex: 1,
-  position: 'relative',
-  maxWidth: '1200px', 
-  margin: '0 auto',  
-  width: '100%',
-  [theme.breakpoints.down('xs')]:{
-    paddingLeft: 5,
-    paddingRight: 5
-  },
+  position: 'relative', 
+  // padding: 0,
+  flexWrap: 'warp',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     flexWrap: 'wrap',
+    margin: 0,
     padding: 0,
-    alignItems: 'center',
+    alignItems: 'center'
   },
+  [theme.breakpoints.down('sm')]:{
+    padding:10,
+    alignItems: 'center'
+  }
 }));
-
 
 const BambooDecorationRight = styled('img')(({ theme }) => ({
   position: 'absolute',
@@ -75,7 +67,7 @@ const BambooDecorationLeft = styled('img')(({ theme }) => ({
 const ProductHighlight = () => {
   return (
       <ProductWrapper>
-        <Grid sx={{paddingLeft:10, paddingRight:10}}>
+        <Grid item xs={12} md={6}>
           <BambooDecorationLeft src={pngwingleft} alt="bamboo decoration left" />
           <ProductContainer>
             <ProductTractorContent />
