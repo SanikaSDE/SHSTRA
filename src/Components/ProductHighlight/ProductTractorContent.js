@@ -17,13 +17,16 @@ const ProductContent = styled(Box)(({ theme }) => ({
   flex: 1,
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(0),
-  width: '100%',
+  width: 'auto',
   position: 'relative',
   zIndex: 1,
   [theme.breakpoints.down('md')]: {
-    width: '100%',
+    width: '500px',
     textAlign: 'center',
     paddingLeft: 0
+  },
+  [theme.breakpoints.up('xl')]:{
+    width: '800px'
   }
 }));
 
@@ -70,6 +73,9 @@ const FeatureText = styled(Typography)(({ theme }) => ({
   color: colors.textDark,
   fontWeight: typography.featureText.fontWeight,
   lineHeight: typography.featureText.lineHeight,
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h4.fontSize
+  }
 }));
 
 const LearnMoreButton = styled(Button)(({ theme }) => ({
@@ -102,6 +108,9 @@ const ProductTractorContent = () => {
             color: colors.primary,
             mb: 2,
             textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
+            [theme.breakpoints.up('xl')]:{
+              fontSize: typography.bigscreenh1.fontSize
+            }
           }}
         >
           {productHighlight.tag}
@@ -113,6 +122,9 @@ const ProductTractorContent = () => {
             ...typography.h3,
             color: colors.textDark,
             mb: 3,
+            [theme.breakpoints.up('xl')]:{
+              fontSize: typography.h1.fontSize
+            }
           }}
         >
           {productHighlight.title}
@@ -127,6 +139,9 @@ const ProductTractorContent = () => {
             [theme.breakpoints.down('md')]: {
               alignItems: 'center',
               textAlign: 'center',
+            },
+            [theme.breakpoints.up('xl')]:{
+              fontSize: typography.h3.fontSize
             }
           }}
         >

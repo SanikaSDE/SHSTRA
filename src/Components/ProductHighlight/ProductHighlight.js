@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, styled, Container } from '@mui/material';
+import { Box, styled, Container, Grid } from '@mui/material';
 import ProductImageTractor from './ProductImageTractor';
 import ProductTractorContent from './ProductTractorContent';
 import pngwingleft from '../../Assets/pngwingleft.png';
@@ -9,6 +9,7 @@ const ProductWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
   minHeight: '500px', 
+  alignItems: 'center',
   [theme.breakpoints.down('md')]:{
     padding:0,}
 }));
@@ -16,19 +17,21 @@ const ProductWrapper = styled(Box)(({ theme }) => ({
 const ProductContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   gap: theme.spacing(4),
   zIndex: 1,
-  position: 'relative', 
-  padding: 0,
-  margin: theme.spacing(0,10),
+  position: 'relative',
+  maxWidth: '1200px',
+  margin: '0 auto',   
+  width: '100%',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     flexWrap: 'wrap',
-    margin: 0,
     padding: 0,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 }));
+
 
 const BambooDecorationRight = styled('img')(({ theme }) => ({
   position: 'absolute',
@@ -61,14 +64,14 @@ const BambooDecorationLeft = styled('img')(({ theme }) => ({
 const ProductHighlight = () => {
   return (
       <ProductWrapper>
-        <Container>
+        <Grid sx={{paddingLeft:10, paddingRight:10}}>
           <BambooDecorationLeft src={pngwingleft} alt="bamboo decoration left" />
           <ProductContainer>
             <ProductTractorContent />
             <ProductImageTractor/>
           </ProductContainer>
           <BambooDecorationRight src={pngwingright} alt="bamboo decoration right" />
-        </Container>
+        </Grid>
       </ProductWrapper>
   );
 };

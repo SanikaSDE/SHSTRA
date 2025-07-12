@@ -27,10 +27,6 @@ const BackgroundImage = styled(Box)(({ theme }) => ({
   backgroundRepeat: 'no-repeat',
   borderBottomLeftRadius: '10rem',
   borderBottomRightRadius: '8rem',
-  [theme.breakpoints.down('sm')]: {
-    borderBottomLeftRadius: '4rem',
-    borderBottomRightRadius: '4rem',
-  },
   opacity: 1,
   zIndex: -1,
   [theme.breakpoints.down('sm')]:{
@@ -81,6 +77,9 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     fontSize: '2rem',
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.bigscreenh1.fontSize
+  }
 }));
 
 const ExploreButton = styled(Button)(({ theme }) => ({
@@ -102,6 +101,12 @@ const ExploreButton = styled(Button)(({ theme }) => ({
     height: buttonStyles.mobileviewButton.height,
     padding: theme.spacing(1, 2),
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h3.fontSize,
+    // fontWeight: typography.h1.fontWeight,
+    width: '500px',
+    height: '70px'
+  }
 }));
 
 const HomeSection = () => {

@@ -24,6 +24,12 @@ const TopContainer = styled(Box)(({ theme }) => ({
   height: '300px',
   borderTopLeftRadius: containerStyles.borderRadius,
   borderTopRightRadius: containerStyles.borderRadius,
+  [theme.breakpoints.only('md')]:{
+    height:'400px'
+  },
+  [theme.breakpoints.up('xl')]:{
+    height:'700px'
+  }
 }));
 
 const BottomContainer = styled(Box)(({ theme }) => ({
@@ -33,6 +39,12 @@ const BottomContainer = styled(Box)(({ theme }) => ({
   borderBottomRightRadius: containerStyles.borderRadius,
   border: '1px solid #C5E8D1',
   borderTop: 'none',
+  [theme.breakpoints.only('md')]:{
+    height:'400px'
+  },
+  [theme.breakpoints.up('xl')]:{
+    height:'700px'
+  }
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
@@ -45,6 +57,9 @@ const Title = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     fontSize: '2.5rem',
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.bigscreenh1.fontSize
+  }
 }));
 
 const CarouselTrack = styled(motion.div)(({ theme }) => ({
@@ -82,6 +97,28 @@ const FeatureCard = styled(Box)(({ theme }) => ({
     objectFit: 'contain',
     marginBottom: theme.spacing(2),
   },
+  [theme.breakpoints.only('md')]:{
+    width: '160px',
+    height: '270px',
+    borderRadius: '80px',
+    '& img': {
+    width: '100px',
+    height: '100px',
+    objectFit: 'contain',
+    marginBottom: theme.spacing(2),
+  },
+  },
+  [theme.breakpoints.up('xl')]:{
+    width: '500px',
+    height: '700px',
+    borderRadius: '150px',
+    '& img': {
+    width: '300px',
+    height: '300px',
+    objectFit: 'contain',
+    marginBottom: theme.spacing(2),
+  },
+  }
 }));
 
 const carouselVariants = {
@@ -102,7 +139,6 @@ const Feature = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Repeat features only for mobile carousel
   const repeatedFeatures = isMobile ? [...features, ...features, ...features] : features;
 
   return (
@@ -139,7 +175,14 @@ const Feature = () => {
             {features.map((feature, index) => (
               <FeatureCard key={index}>
                 <img src={feature.image} alt={`Feature ${index + 1}`} />
-                <Typography variant="body1" fontWeight={500}>
+                <Typography variant="body1" fontWeight={500} sx={{
+                  [theme.breakpoints.only('md')]: {
+                    fontSize: '15px',
+                  },
+                  [theme.breakpoints.up('xl')]: {
+                    fontSize: typography.h3.fontSize,
+                  },
+                }}>
                   {feature.text}
                 </Typography>
               </FeatureCard>

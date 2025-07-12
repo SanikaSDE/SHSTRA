@@ -8,6 +8,11 @@ export const colors = {
 };
 
 export const typography = {
+  bigscreenh1:{
+    fontSize: '90px',
+    fontWeight: 600,
+    lineHeight: 0.7
+  },
   h1: {
     fontSize: '60px',
     fontWeight: 600,
@@ -20,6 +25,11 @@ export const typography = {
   },
   h3: {
     fontSize: '35px',
+    fontWeight: 600,
+    lineHeight: 1.3,
+  },
+  h4: {
+    fontSize: '27px',
     fontWeight: 600,
     lineHeight: 1.3,
   },

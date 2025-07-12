@@ -28,6 +28,12 @@ const SectionWrapper = styled(Box)({
 const TopContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#C5E8D1',
   height: containerStyles.topHeight,
+  [theme.breakpoints.only('md')]:{
+    height:'400px'
+  },
+  [theme.breakpoints.up('xl')]:{
+    height:'700px'
+  }
 }));
 
 const BottomContainer = styled(Box)(({ theme }) => ({
@@ -35,6 +41,12 @@ const BottomContainer = styled(Box)(({ theme }) => ({
   height: containerStyles.bottomHeight,
   border: '1px solid #C5E8D1',
   borderTop: 'none',
+  [theme.breakpoints.only('md')]:{
+    height:'400px'
+  },
+  [theme.breakpoints.up('xl')]:{
+    height:'700px'
+  }
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
@@ -47,6 +59,9 @@ const Title = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     fontSize: typography.h3.fontSize
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.bigscreenh1.fontSize
+  }
 }));
 
 const CarouselTrack = styled(motion.div)(({ theme }) => ({
@@ -62,6 +77,9 @@ const StaticTrack = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
   flexWrap: 'wrap',
   padding: theme.spacing(4),
+  [theme.breakpoints.up('xl')]:{
+    gap: theme.spacing(10)
+  }
 }));
 
 const FeatureCard = styled(Box)(({ theme }) => ({
@@ -78,6 +96,16 @@ const FeatureCard = styled(Box)(({ theme }) => ({
   boxShadow: cardStyles.boxShadow,
   border: '1px solid rgba(224, 224, 224, 0.5)',
   flexShrink: 0,
+  [theme.breakpoints.only('md')]:{
+    width: '160px',
+    height: '270px',
+    borderRadius: '80px',
+  },
+  [theme.breakpoints.up('xl')]:{
+    width: '500px',
+    height: '700px',
+    borderRadius: '150px',
+  }
 }));
 
 const FeatureText = styled(Typography)(({ theme }) => ({
@@ -89,6 +117,9 @@ const FeatureText = styled(Typography)(({ theme }) => ({
   transition: 'all 0.3s ease',
   '&:hover': {
     color: colors.primaryDark,
+  },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h3.fontSize
   }
 }));
 

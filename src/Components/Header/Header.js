@@ -18,9 +18,13 @@ import { headerData } from '../../Utils/StaticData';
 import { colors, typography, buttonStyles } from '../../Utils/stylingComponents';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  height: '80px',
   backgroundColor: colors.white,
   boxShadow: 'none',
-  position: 'static'
+  position: 'static',
+  [theme.breakpoints.up('xl')]:{
+    height: '100px'
+  }
 }));
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -31,11 +35,17 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: theme.spacing(1, 2),
+  [theme.breakpoints.up('xl')]:{
+    maxWidth: '1800px',
+  }
 }));
 
-const Logo = styled('img')(() => ({
+const Logo = styled('img')(({ theme }) => ({
   height: '40px',
   width: 'auto',
+  [theme.breakpoints.up('xl')]:{
+    height: '80px'
+  }
 }));
 
 const NavList = styled(List)(({ theme }) => ({
@@ -57,6 +67,9 @@ const NavLink = styled(Button)(({ theme }) => ({
     color: colors.primary,
     backgroundColor: 'transparent',
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h4.fontSize
+  }
 }));
 
 const ExploreButton = styled(Button)(({ theme }) => ({
@@ -73,6 +86,10 @@ const ExploreButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h4.fontSize,
+    padding: theme.spacing(1, 3)
+  }
 }));
 
 const Header = () => {

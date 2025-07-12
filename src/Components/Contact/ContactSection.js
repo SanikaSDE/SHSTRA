@@ -11,11 +11,18 @@ import { colors, typography, buttonStyles } from '../../Utils/stylingComponents'
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   width: '100%',
-  margin: '0 auto',
+  // margin: '0 auto',
   backgroundColor: colors.white,
-  padding: theme.spacing(6, 0),
+  padding: 'auto',
   position: 'relative',
   overflow: 'hidden',
+  [theme.breakpoints.up('xl')]: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
+    // minHeight: '1000px',
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -31,15 +38,18 @@ const SectionContainer = styled(Box)(({ theme }) => ({
 
 const ContentContainer = styled(Box)(({ theme }) => ({
   width: '500px',
-  height: '400px',
+  height: '100%',
   position: 'relative',
   zIndex: 1,
   [theme.breakpoints.down('md')]: {
   width: '100%',
   height: 'auto',
-  paddingBottom: theme.spacing(4),
-}
-
+  paddingBottom: 'auto',
+},
+[theme.breakpoints.up('xl')]: {
+    width: '800px',
+    height: 'auto',
+  }
 }));
 
 const InfoBox = styled(Box)(({ theme }) => ({
@@ -81,7 +91,12 @@ const ContactFormBox = styled(Box)(({ theme }) => ({
   width: '70%',
   height: 'auto',
   padding: theme.spacing(3),
-}
+},
+[theme.breakpoints.up('xl')]: {
+    width: '470px',
+    height: '550px',
+    padding: theme.spacing(6),
+  }
 }));
 
 const TitleText = styled(Typography)(({ theme }) => ({
@@ -141,6 +156,9 @@ const ContactText = styled(Typography)(({ theme }) => ({
     '&:hover': {
       transform: 'none',
     }
+  },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h3.fontSize
   }
 }));
 
@@ -152,6 +170,9 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('md')]: {
     fontSize: '2rem',
+  },
+  [theme.breakpoints.up('xl')]:{
+    fontSize: typography.h3.fontSize
   }
 }));
 
@@ -192,6 +213,17 @@ const RoundedTextField = styled(TextField)(({ theme }) => ({
     '& .MuiInputBase-inputMultiline': {
       fontSize: '1rem',
     },
+  },
+  [theme.breakpoints.up('xl')]: {
+    '& .MuiInputLabel-root': {
+      fontSize: '1.5rem',
+    },
+    '& .MuiInputBase-input': {
+      fontSize: '1.5rem',
+    },
+    '& .MuiInputBase-inputMultiline': {
+      fontSize: '1.5rem',
+    },
   }
 }));
 
@@ -221,6 +253,13 @@ const SubmitButton = styled(Button)(({ theme }) => ({
     width: '130px',
     padding: '2px',
     height: buttonStyles.mobileviewButton.height,
+  },
+  [theme.breakpoints.up('xl')]: {
+    fontSize: typography.body1.fontSize,
+    fontWeight: buttonStyles.mobileviewButton.fontWeight,
+    width: '250px',
+    padding: '12px',
+    height: '50px',
   }
 }));
 
@@ -259,6 +298,13 @@ const FormContainer = styled(Container)(({ theme }) => ({
     flexDirection: 'column',
     gap: theme.spacing(2),
     padding: 0
+  },
+  [theme.breakpoints.up('xl')]: {
+    gap: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+    maxWidth: 'auto',
+    paddingLeft: 0,
+    paddingRight: 0,
   }
 }));
 
@@ -266,6 +312,12 @@ const MessageContainer = styled(Container)(({ theme }) => ({
   marginBottom: theme.spacing(3),
   [theme.breakpoints.down('md')]: {
     padding: 0
+  },
+   [theme.breakpoints.up('xl')]: {
+    marginBottom: theme.spacing(4),
+    maxWidth: 'none',
+    paddingLeft: 0,
+    paddingRight: 0,
   }
 }));
 
@@ -288,13 +340,15 @@ const ContactSection = () => {
   return (
     <SectionContainer>
       <BambooDecorationLeft src={pngwingleft} alt="bamboo decoration" />
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
       <Grid
           container
           spacing={4}
           alignItems="center"
           justifyContent="center"
           direction={{ xs: 'column', md: 'row' }}
-          sx={{ minHeight: '100vh', textAlign: { xs: 'center', md: 'left' } }}
+          sx={{ padding: theme.spacing(10,0), textAlign: { xs: 'center', md: 'left' } , maxWidth: { xl: '1400px' },
+          margin: '0 auto'}} 
         >
         {/* Left Info Section */}
         <Grid item xs={12} md={6}>
@@ -311,6 +365,10 @@ const ContactSection = () => {
                             color: colors.primary,
                             mb: 2,
                             textShadow: '1px 1px 3px rgba(0,0,0,0.1)',
+                            [theme.breakpoints.up('xl')]:{
+                              fontSize: typography.bigscreenh1.fontSize,
+                              fontWeight: typography.bigscreenh1.fontWeight
+                            }
                           }}>
                   {contactData.title}
                 </TitleText>
@@ -318,6 +376,10 @@ const ContactSection = () => {
                             ...typography.h3,
                             color: colors.textDark,
                             mb: 3,
+                            [theme.breakpoints.up('xl')]:{
+                              fontSize: typography.h1.fontSize,
+                              fontWeight: typography.h1.fontWeight
+                            }
                           }}>
                   {contactData.companyName}
                 </CompanyText>
@@ -330,7 +392,12 @@ const ContactSection = () => {
                               textAlign: 'center',
                               paddingLeft: theme.spacing(5),
                               paddingRight: theme.spacing(5),
-                  }}}>
+                            },
+                            [theme.breakpoints.up('xl')]:{
+                              fontSize: typography.h3.fontSize,
+                              // fontWeight: typography.h1.fontWeight
+                            }
+                  }}>
                   {contactData.description}
                 </DescriptionText>
 
@@ -368,6 +435,9 @@ const ContactSection = () => {
                         },
                         [theme.breakpoints.down('md')]: {
                           width: '100%',
+                        },
+                        [theme.breakpoints.up('xl')]:{
+                          width: "220px",
                         }
                       }}
                     />
@@ -384,6 +454,10 @@ const ContactSection = () => {
                         },
                         [theme.breakpoints.down('md')]: {
                           width: '100%',
+                        },
+                        [theme.breakpoints.up('xl')]:{
+                          height: '50px',
+                          width: "220px"
                         }
                       }}
                     />
@@ -405,6 +479,10 @@ const ContactSection = () => {
                         },
                         [theme.breakpoints.down('md')]: {
                           width: '100%',
+                        },
+                        [theme.breakpoints.up('xl')]:{
+                          width: "470px",
+                          height: "80px"
                         }
                       }}
                     />
@@ -422,7 +500,7 @@ const ContactSection = () => {
           </motion.div>
         </Grid>
       </Grid>
-
+      </Container>
       <BambooDecorationRight src={pngwingright} alt="bamboo decoration" />
     </SectionContainer>
   );

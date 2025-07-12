@@ -171,9 +171,9 @@ export const footerData = {
     { title: 'Contact', url: '#' }
   ],
   contactInfo: [
-    { icon: '📍', text: '123 Farm Street, Pune, Maharashtra, India' },
-    { icon: '📞', text: '+91 1234567890' },
-    { icon: '✉️', text: 'info@shastratva.com' }
+    { icon: '📍', text: 'Sr. No. 19/1 B, Hingne Home Colony, Karvenagar, Pune, Maharashtra, 411052' },
+    { icon: '📞', text: '+91 9834094712' },
+    { icon: '✉️', text: 'yash@shstra.in' }
   ],
   legalLinks: [
     { title: 'Privacy Policy', url: '#' },

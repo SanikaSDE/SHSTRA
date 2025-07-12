@@ -16,8 +16,8 @@ const ProductImageTractor = () => {
         <Box
           sx={{
             position: 'relative',
-            width: { xs: '50%', sm: '60%', md: '400px' },
-            height: { xs: '50%', sm: '60%', md: '350px' },
+            width: { xs: '50%', sm: '60%', md: '400px', xl: '700px' },
+            height: { xs: '50%', sm: '60%', md: '350px', xl: '100%' },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
